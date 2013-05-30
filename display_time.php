@@ -21,7 +21,7 @@ function display_time($db){
 		        </tr>');
         }
         else{
-		  echo($row[3]);
+		 
           echo('<tr>
             <td>'.date('D, M jS Y h:i:s a',$row[0]).'</td>	
             <td>'.date('D, M jS Y h:i:s a',$row[1]).'</td>
