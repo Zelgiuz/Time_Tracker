@@ -1,13 +1,5 @@
 <?php
-require('login_user_handler.php');
-require('forms.php');
-require('display_time.php');
-require('create_user_handler.php');
-require('logout_user_handler.php');
-//require ('create_time_handler.php');
-require('start_handler.php');
-require('stop_handler.php');
-require('delete_handler.php');
+
 echo("<h1>This is a website that stores time logs in a database</h1>");
 
 

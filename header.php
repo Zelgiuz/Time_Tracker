@@ -6,7 +6,16 @@ require('config.php');
 /* Connect to the database located at spa5@redbottledesign.com*/
 include('db.php');
 //Deal with cookies
-
+require('login_user_handler.php');
+require('forms.php');
+require('display_time.php');
+require('create_user_handler.php');
+require('logout_user_handler.php');
+require('decrypt_handler.php');
+//require ('create_time_handler.php');
+require('start_handler.php');
+require('stop_handler.php');
+require('delete_handler.php');
 
 //output the <head> !doctype <body> of html
 ?>

@@ -3,7 +3,8 @@ function start($db){
   if (!(isset($_COOKIE["start"]))){  
     setcookie("start",time());
     $start=time();
-    $user=$_COOKIE["user"];
+    $encrypt=$_COOKIE['user'];
+    $user=decrypt($encrypt,$db);
     $number=0;
     $sql= "UPDATE `Time` SET `Stop`='$start' WHERE `Account_ID`='$user' AND `Stop`='$number'";
     $db->query($sql);
