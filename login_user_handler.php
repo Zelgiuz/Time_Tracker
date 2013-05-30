@@ -25,7 +25,7 @@ function login($db) {
 
           //Set the cookies for current user and logged in
           setcookie("logged",TRUE,$expire,$path,$secure,$httponly);
-          setcookie("user",$row[0]);
+          setcookie("user",sha1($row[0].SYS_SALT));
         }
     }
     else{
