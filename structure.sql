@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS `Accounts` (
   `Account_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Search key',
   `Username` varchar(38) COLLATE utf8_unicode_ci NOT NULL,
   `Password` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`Account_ID`),
   UNIQUE KEY `Username` (`Username`),
   UNIQUE KEY `Account_ID` (`Account_ID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
