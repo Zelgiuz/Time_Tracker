@@ -1,7 +1,6 @@
 <?php
 function display_time($db){
-	$encrypt=$_COOKIE["user"];
-  $user=decrypt($encrypt,$db);
+  $user=decrypt($db);
     $sql="SELECT * FROM `Time` WHERE `Account_ID`='$user' ORDER BY `Start` DESC";
     $stmt=$db->query($sql);
 	if ($stmt){

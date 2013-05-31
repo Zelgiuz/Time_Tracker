@@ -27,7 +27,9 @@ function delete_user($db){
           
           $db->query($sql);
           logout();
+          
           echo("<h3> Account: ".$sn." Succesfully deleted</h3>");
+          return 0;
         }
   }
   else{

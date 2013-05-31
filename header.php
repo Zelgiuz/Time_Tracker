@@ -6,6 +6,14 @@ require('config.php');
 /* Connect to the database located at spa5@redbottledesign.com*/
 include('db.php');
 //Deal with cookies
+$logged=$_COOKIE['logged'];
+if($logged==null)$logged=0;
+$start=$_COOKIE['start'];
+if($start==null)$start=0;
+global $encrypt;
+$encrypt=$_COOKIE['user'];
+if($encrypt==null) $encrypt="";
+
 require('login_user_handler.php');
 require('forms.php');
 require('display_time.php');

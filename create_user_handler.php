@@ -6,7 +6,7 @@ function create_user($db){//Grab the arguments for the function from the post
   $pw=$_POST["password"];
   $retype=$_POST["retyped"];
   //if the password 2 password fields are equal
-  if(!($pw==$retype)) echo("<h3> PassWords do not match</h3>");
+  if(!($pw==$retype)){ echo("<h3> PassWords do not match</h3>");return;}
 
   //else end; 
   else{
@@ -27,7 +27,7 @@ function create_user($db){//Grab the arguments for the function from the post
       login($db);
     //If the username already exists
 
-
+      return 1;
     }//end try
     //output errors
     catch (PDOException $e){

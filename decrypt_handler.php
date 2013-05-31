@@ -1,6 +1,6 @@
 <?php
-function decrypt($encrypt,$db){
-      
+function decrypt($db){
+      global $encrypt;
       //find the user id and only store temporarily 
       //so its not stored on a cookie
       $sql = "SELECT * FROM `Accounts`";
@@ -12,7 +12,7 @@ function decrypt($encrypt,$db){
         }
        
       }
-      echo("USER NOT FOUND");
+     
       
 
   

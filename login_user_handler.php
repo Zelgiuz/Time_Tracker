@@ -17,7 +17,8 @@ function login($db) {
       $row=$stmt->fetch();
         if ($row==null){
               //if no rows exist query failed set cookie as such
-          setcookie("logged","failed",$expire,$path,$secure,$httponly);
+          return 2;
+          setcookie("logged",2,$expire,$path,$secure,$httponly);
           
             }		
         else{
@@ -28,11 +29,13 @@ function login($db) {
           setcookie("logged",TRUE,$expire,$path,$secure,$httponly);
           
           setcookie("user",sha1($row[0].SYS_SALT));
-          
+          global $encrypt; $encrypt=sha1($row[0].SYS_SALT);
+          return 1;
         }
     }
     else{
-        setcookie("logged","failed",$expire,$path,$secure,$httponly);
+          return 2;
+        setcookie("logged",2,$expire,$path,$secure,$httponly);
         
     }
    }//end try
