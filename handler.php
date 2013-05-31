@@ -39,6 +39,10 @@ elseif($_POST["exe"]=="stop"){
   //refresh for cookies sake
   header("Location: index.php");
 }
+elseif($_POST["exe"]=="delete_user"){
+  delete_user($db);
+  
+}
 else{}
 
 //Print these forms if the user is not logged in and hasn't failed an attempt
@@ -67,7 +71,8 @@ else{  //creates the form that allows the user to start and stop the clock
 	   //creates the button that allows a user to logout
 	create_form_logout();
   create_form_time_create();  
-	display_time($db);   
+	display_time($db);
+  create_form_delete_user();
       
 }
 

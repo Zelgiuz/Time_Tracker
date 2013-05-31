@@ -6,7 +6,7 @@ echo('
      <form method="post" action="index.php">
         ScreenName: <input type="text" name="username"><br>
         Password: <input type="password" name="password"><br>
-        Retype-Password: <input type="text" name="retyped"><br>
+        Retype-Password: <input type="password" name="retyped"><br>
         <input type="submit" value="CreateUser"><br>
         <input type="hidden" name="exe" value="create">
      </form>
@@ -73,4 +73,18 @@ function create_form_stop(){
       <input type="hidden" name="exe" value="stop">
     </form>
     ');
+}
+function create_form_delete_user(){
+  echo('<!-- form to delete a user-->
+     <h3>THIS IS THE FORM TO DELETE YOUR ACCOUNT </h3>
+     <h4>ENTER YOUR INFO ONLY IF YOU DO NOT WANT TO USE THIS SITE </h4>
+     <h4>All of your information and time logs will be deleted.</h4>
+    <form method="post" "action=index.php">
+      Username: <input type="text" name="username"><br>
+      Password: <input type="password" name="password"<br>
+      Retype-Password<input type="password" name="re_type"<br>
+      <input type="submit" value= "DELETE!"<br>
+      <input type="hidden" name="exe" value="delete_user">
+      </form>
+  ');
 }
