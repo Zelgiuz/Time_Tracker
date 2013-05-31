@@ -17,7 +17,8 @@ function login($db) {
       $row=$stmt->fetch();
         if ($row==null){
               //if no rows exist query failed set cookie as such
-	      setcookie("logged","failed",$expire,$path,$secure,$httponly);
+          setcookie("logged","failed",$expire,$path,$secure,$httponly);
+          
             }		
         else{
           //Settings for the Cookies
@@ -25,11 +26,14 @@ function login($db) {
 
           //Set the cookies for current user and logged in
           setcookie("logged",TRUE,$expire,$path,$secure,$httponly);
+          
           setcookie("user",sha1($row[0].SYS_SALT));
+          
         }
     }
     else{
         setcookie("logged","failed",$expire,$path,$secure,$httponly);
+        
     }
    }//end try
   //output errors

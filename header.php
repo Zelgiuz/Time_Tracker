@@ -12,7 +12,7 @@ require('display_time.php');
 require('create_user_handler.php');
 require('logout_user_handler.php');
 require('decrypt_handler.php');
-//require ('create_time_handler.php');
+require ('create_time_handler.php');
 require('start_handler.php');
 require('stop_handler.php');
 require('delete_handler.php');

@@ -44,22 +44,22 @@ function create_form_logout(){
 
 //This is the display of the timer
 //Disabled for the MVP
-/*function create_form_time_create(){
+function create_form_time_create(){
 echo('
-  <h4> Enter times here</h4>
+  <h4> Enter times here in military format, date is assumed to be today.</h4>
   <form method="post" "action=index.php">
-    Start Time: <input type="text" name="start"><br>    
-    Stop Time:  <input type="text" name="stop"><br>
+    Start: Hours <input type="text" name="start_hours">Minutes<input type="text" name="start_minutes"><br>    
+    Stop: Hours <input type="text" name="stop_hours">Minutes<input type="text" name="stop_minutes"><br>
     <input type="submit" value="Log Time"<br>
 	<input type="hidden" name="exe" value="create_time">
   </form>    
 ');
-}*/
+}
 
 //the start and stop buttons
 function create_form_start(){
 echo('     
-	 <!-- startbutton -->
+	 <!-- start button -->
     <form method="post" "action=index.php">
       <input type="submit" value="Start!"><br>
       <input type="hidden" name="exe" value="start">
@@ -67,22 +67,10 @@ echo('
 	');
 }
 function create_form_stop(){
-	echo('<!-- stopbutton -->
+	echo('<!-- stop button -->
     <form method="post" "action=index.php">
       <input type="submit" value="Stop!"><br>
       <input type="hidden" name="exe" value="stop">
     </form>
     ');
 }
-/*function	create_form_clock(){
-echo('<form name="myform"> 
-<center>
-<div class="debu3" id="countdown1">
-<script type="text/javascript">
-countdown_clock();
-</script>
-</div>
-</center>
-</form>
-');
-}*/

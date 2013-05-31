@@ -10,7 +10,7 @@ if ($_POST["exe"]=="login"){
 
 elseif ($_POST["exe"]=="delete"){
     delete($db);
-
+    header("Location: index.php");
 }
 elseif ($_POST["exe"]=="create"){
     create_user($db);
@@ -21,9 +21,10 @@ elseif ($_POST["exe"]=="logout"){
     logout();
     header("Location: index.php");
 }
-/*elseif($exe=="create_time"){
+elseif($_POST["exe"]=="create_time"){
+ 
     create_time($db);
-}*/
+}
 
 elseif($_POST["exe"]=="start"){
     //set a cookie with the time they clicked start
@@ -64,11 +65,10 @@ else{  //creates the form that allows the user to start and stop the clock
   
 	   
 	   //creates the button that allows a user to logout
-	create_form_logout(); 	   
-	display_time($db);
-	   
-       //create_form_time_create(); disabled for MVP
-	   
+	create_form_logout();
+  create_form_time_create();  
+	display_time($db);   
+      
 }
 
 
