@@ -5,7 +5,7 @@ echo('
      <h2>New user? Create an account here</h2>  
      <form method="post" action="index.php">
         ScreenName: <input type="text" name="username"><br>
-        Password: <input type="text" name="password"><br>
+        Password: <input type="password" name="password"><br>
         Retype-Password: <input type="text" name="retyped"><br>
         <input type="submit" value="CreateUser"><br>
         <input type="hidden" name="exe" value="create">
@@ -20,7 +20,7 @@ function create_form_login(){
     <h2>Already Registered? Login here.</h2>
     <form method="post" action="index.php">
       ScreenName: <input type="text" name="username"><br>
-      Password: <input type="text" name="password"><br>
+      Password: <input type="password" name="password"><br>
       <input type="submit" value="Login"><br>
       <input type="hidden" name="exe" value="login">
     </form>
