@@ -3,8 +3,7 @@ function stop($db){
   if(isset($_COOKIE['start'])){
     //fetch the start cookie for when the user started the timer
 	$start=$_COOKIE['start'];
-  $encrypt=$_COOKIE['user'];
-  $user=decrypt($encrypt,$db);
+  $user=decrypt($db);
 	//then delete said cookie so one can't have multiple entry logs
 	setcookie("start",0,time()-3600);
 	$stop=time();
