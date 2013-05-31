@@ -6,12 +6,13 @@ function decrypt($encrypt,$db){
       $sql = "SELECT * FROM `Accounts`";
       $stmt=$db->query($sql);
       while($row=$stmt->fetch()){
-        if ($encrypt=sha1($row[0].SYS_SALT)){
+        if ($encrypt==sha1($row[0].SYS_SALT)){
           $user=$row[0];
           return $user;
         }
-        else echo("FAILURE");
+       
       }
+      echo("USER NOT FOUND");
       
 
   
