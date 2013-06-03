@@ -1,6 +1,6 @@
 <?php
 
-echo("<h1>This is a website that stores time logs in a database</h1>");
+echo('<h2 class="heading">TIMETRACKER</h2>');
 
 
 if ($_POST["exe"]=="login"){
@@ -48,22 +48,26 @@ else{}
 
 //Print these forms if the user is not logged in and hasn't failed an attempt
 if ($logged==0){
-	create_form_new_user();
+  echo('<div id=body>');
 	create_form_login();
+  create_form_new_user();
+  echo('</div>');
    }
 
 //Print these forms if the user is not logged because they weren't recognized
 //and give them an error message telling them this
 elseif($logged==2){
-
-  create_form_new_user();
-  echo("<h3>ERROR Username or Password is incorrect</h3>");
+  echo('<div id=body>');
+  echo('<div class="error">ERROR Username or Password is incorrect</div>');
   create_form_login();
+  create_form_new_user();
+
+  echo('</div>');
 
 }
 //These forms
 else{  //creates the form that allows the user to start and stop the clock
-  
+  echo('<div id=body>');
   //creates a clock representation of the time
   if($start==1) create_form_stop();
   else create_form_start();
@@ -74,7 +78,7 @@ else{  //creates the form that allows the user to start and stop the clock
   create_form_time_create();  
 	display_time($db);
   create_form_delete_user();
-      
+  echo('</div>');    
 }
 
 

@@ -2,14 +2,20 @@
 //new user form
 function create_form_new_user(){
 echo('
-     <h2>New user? Create an account here</h2>  
-     <form method="post" action="index.php">
-        ScreenName: <input type="text" name="username"><br>
-        Password: <input type="password" name="password"><br>
-        Retype-Password: <input type="password" name="retyped"><br>
-        <input type="submit" value="CreateUser"><br>
+    <div id="signin">
+    
+    <form method="post" action="index.php">
+    <h2>Register</h2>  
+     
+        <input type="text" name="username"><br>
+        <input type="password" name="password"><br>
+        <input type="password" default="Repeat Password" name="retyped"><br>
+        <div id="formbutton"><input type="submit" value="Register"></div><br>
         <input type="hidden" name="exe" value="create">
+        
      </form>
+     
+     </div>
   ');//end form
 }
 
@@ -17,13 +23,16 @@ echo('
 //login form
 function create_form_login(){ 
   echo('
-    <h2>Already Registered? Login here.</h2>
+    <div id="signin">
+    
     <form method="post" action="index.php">
-      ScreenName: <input type="text" name="username"><br>
-      Password: <input type="password" name="password"><br>
-      <input type="submit" value="Login"><br>
+    <h2>Sign In</h2>
+      <input type="text" default="username" name="username"><br>
+      <input type="password" default="password" name="password"><br>
+      <div id="formbutton"><input type="submit" value="Sign in"></div><br>
       <input type="hidden" name="exe" value="login">
     </form>
+    </div>
 
 ');//end form
 

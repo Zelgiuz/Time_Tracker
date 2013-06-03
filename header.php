@@ -1,7 +1,10 @@
 <?php
 
 //load config
+if(include('config.php'))
 require('config.php');
+else echo("RENAME CONFIG.SAMPLE.PHP to CONFIG.PHP AFTER MAKING THE APPROPRIATE CHANGES");
+
 //load database object
 /* Connect to the database located at spa5@redbottledesign.com*/
 include('db.php');
@@ -10,7 +13,6 @@ $logged=$_COOKIE['logged'];
 if($logged==null)$logged=0;
 $start=$_COOKIE['start'];
 if($start==null)$start=0;
-global $encrypt;
 $encrypt=$_COOKIE['user'];
 if($encrypt==null) $encrypt="";
 
@@ -31,12 +33,7 @@ require('delete_handler.php');
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- TWO STEPS TO INSTALL DYNAMIC CLOCK:
 
-  1.  Copy the coding into the HEAD of your HTML document
-  2.  Add the last code into the BODY of your HTML document  -->
-
-<!-- STEP ONE: Paste this code into the HEAD of your HTML document  -->
 
 
 
@@ -55,3 +52,4 @@ require('delete_handler.php');
 
    </head>
  <body>
+ <div id="wrapper">
