@@ -4,47 +4,48 @@ echo('<h2 class="heading">TIMETRACKER</h2>');
 else
 echo('<h2 class="heading">TIMETRACKER Logged in as:</h2>');
 echo('<div id="body">');
-
-if ($_POST["exe"]=="login"){
+if(isset($_POST["exe"])){
+  if ($_POST["exe"]=="login"){
     $logged=login($db);
     
-}
+  }
 
-elseif ($_POST["exe"]=="delete"){
+  elseif ($_POST["exe"]=="delete"){
     delete($db);
     
-}
-elseif ($_POST["exe"]=="create"){
+  }
+  elseif ($_POST["exe"]=="create"){
     $logged=create_user($db);
     
-}
+  }
 
-elseif ($_POST["exe"]=="logout"){
+  elseif ($_POST["exe"]=="logout"){
     $logged=logout();
     
-}
-elseif($_POST["exe"]=="create_time"){
+  }
+  elseif($_POST["exe"]=="create_time"){
  
     create_time($db);
     
-}
+  }
 
-elseif($_POST["exe"]=="start"){
+  elseif($_POST["exe"]=="start"){
     //set a cookie with the time they clicked start
-	$start=start($db);
+    $start=start($db);
   //refresh for cookies sake
   
 }
 
-elseif($_POST["exe"]=="stop"){
+  elseif($_POST["exe"]=="stop"){
     //log the time they hit stop and start in the database
-	$start=stop($db);
-  //refresh for cookies sake
+    $start=stop($db);
+    //refresh for cookies sake
+  }
+  elseif($_POST["exe"]=="delete_user"){
+    $logged=delete_user($db);  
+  }
+  else{}
 }
-elseif($_POST["exe"]=="delete_user"){
- $logged=delete_user($db);  
-}
-else{}
 echo('</div>');
 if ($logged!=1)
 echo('<h2 class="heading">TIMETRACKER</h2>');

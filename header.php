@@ -9,12 +9,14 @@ else echo("RENAME CONFIG.SAMPLE.PHP to CONFIG.PHP AFTER MAKING THE APPROPRIATE C
 /* Connect to the database located at spa5@redbottledesign.com*/
 include('db.php');
 //Deal with cookies
-$logged=$_COOKIE['logged'];
-if($logged==null)$logged=0;
-$start=$_COOKIE['start'];
-if($start==null)$start=0;
-$encrypt=$_COOKIE['user'];
-if($encrypt==null) $encrypt="";
+if(isset($_COOKIE['logged'])) $logged=$_COOKIE['logged'];
+else $logged=0;
+
+if(isset($_COOKIE['start']))$start=$_COOKIE['start'];
+else $start=0;
+
+if(isset($_COOKIE['user']))$encrypt=$_COOKIE['user'];
+else $encrypt="";
 
 require('login_user_handler.php');
 require('forms.php');
