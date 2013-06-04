@@ -42,11 +42,12 @@ function create_form_login(){
 //The Form to Logout
 
 function create_form_logout(){
-  echo('
+  echo('<div id="logout">
     <form method="post" "action=index.php">
       <input type="submit" value="Logout"><br>
       <input type="hidden" name="exe" value="logout">
     </form>
+    </div>
   ');//end form
 }
 
@@ -55,45 +56,57 @@ function create_form_logout(){
 //Disabled for the MVP
 function create_form_time_create(){
 echo('
-  <h4> Enter times here in military format, date is assumed to be today.</h4>
+    <div id="create-time">
+     <h3>Add Custom Time</h3>
+     <h5>All times are in 24 hours format</h5>
   <form method="post" "action=index.php">
-    Start: Hours <input type="text" name="start_hours">Minutes<input type="text" name="start_minutes"><br>    
-    Stop: Hours <input type="text" name="stop_hours">Minutes<input type="text" name="stop_minutes"><br>
-    <input type="submit" value="Log Time"<br>
+    Start:<input type="text" name="start_hours"><br>    
+    Stop:   <input type="text" name="stop_hours"><br>
+    <div id="add-button"><input type="submit" value="Add"></div><br>
 	<input type="hidden" name="exe" value="create_time">
   </form>    
+  </div>
 ');
 }
 
 //the start and stop buttons
 function create_form_start(){
-echo('     
+echo('
+   <div id="start-stop">
 	 <!-- start button -->
     <form method="post" "action=index.php">
-      <input type="submit" value="Start!"><br>
+      <div id="startbutton"><input type="submit" value="Start Timer"></div><br>
       <input type="hidden" name="exe" value="start">
     </form>
+    </div>
 	');
 }
 function create_form_stop(){
-	echo('<!-- stop button -->
+	echo('
+    <div id="start-stop">
+    <!-- stop button -->
     <form method="post" "action=index.php">
-      <input type="submit" value="Stop!"><br>
+    <div id="stopbutton">  <input type="submit" value="Stop Timer"></div><br>
       <input type="hidden" name="exe" value="stop">
     </form>
+    </div>
     ');
 }
 function create_form_delete_user(){
   echo('<!-- form to delete a user-->
-     <h3>THIS IS THE FORM TO DELETE YOUR ACCOUNT </h3>
-     <h4>ENTER YOUR INFO ONLY IF YOU DO NOT WANT TO USE THIS SITE </h4>
-     <h4>All of your information and time logs will be deleted.</h4>
+     
+    <div id="delete-acct">
     <form method="post" "action=index.php">
-      Username: <input type="text" name="username"><br>
-      Password: <input type="password" name="password"<br>
-      Retype-Password<input type="password" name="re_type"<br>
-      <input type="submit" value= "DELETE!"<br>
+    <h3>Delete Account</h3>
+      If you check confirm and click delete all of your data will be destroyed.
+      Press only with this knowledge.<br>
+      <input type="text" default="Username" name="username"><br>
+      <input type="password" default="Password" name="password"><br>
+      <input type="checkbox" value="confirm" name="checked">Confirm<br>
+      <div id="deletebutton"><input type="submit" value= "Delete Account"></div><br>
+      
       <input type="hidden" name="exe" value="delete_user">
       </form>
+    </div>
   ');
 }

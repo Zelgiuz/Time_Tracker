@@ -1,9 +1,12 @@
+/*Sets the default fonts and color for everything on the page*/
 #wrapper{
         color: black;
-        font-family: sans-serif;
+        font-family: Georgia,"Times New Roman",Times,serif;
         font-style: normal;
 
 }
+
+/*Positions the login and register forms*/
 #signin{
     position: relative;
     left: 650px;
@@ -14,6 +17,7 @@
     border-radius:5px;
 }
 
+/*Edits the look and feel of the input boxes in the login/register forms*/
 #signin input{
     border-color: #bbb;
     border-width: 1px;
@@ -21,6 +25,8 @@
     padding: 5px 125px 5px 5px;
     margin: 5px;
 }
+
+/*Edits the look and position of the Login and Register Forms*/
 #signin form{
     width: 300px;
     position: center;
@@ -32,22 +38,197 @@
     margin: 10px 10px 10px 0px;
     padding: 20px;
 }
+/*Aligns the Login and register within the form*/
 #signin h2{
     margin: 5px;
 }
+
+/*Formats the look and dimensions of the start button*/
+#startbutton input{
+    background-color: rgb(0, 187, 0);
+    background: linear-gradient(to top, green, rgb(0,187,0));
+    color: white;
+    border-color: rgb(0, 187, 0);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+/*Formats the look and dimensions of the stop button*/
+#stopbutton input{
+    background: linear-gradient(to bottom, red, rgb(187,0,0));
+    background-color: red;
+    color: white;
+    border-color: red;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+/*Formats the look and dimensions of the delete button*/
+#deletebutton input{
+    background: linear-gradient(to bottom, red, rgb(187,0,0));
+    background-color: red;
+    color: white;
+    border-color: red;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+/*This formats the currently active timer row*/
+#in-progress td{background-color: rgba(0,187,0,.1);
+}
+
+/*This gives the background of the active timer row
+ a greenish tint to tell the user the timer is running*/
+#in-progress tr{
+background-color: rgba(0,187,0,.1);
+}
 #formbutton{
 }
+/* this positions and sets the fonts for the timetable*/
+
+#timetable{
+position: relative;
+top: -645px;
+left: 450px;
+font-size: 12px;
+color: #999;
+margin:10px;
+}
+
+/*This is the base of the alternating background effect*/
+#timetable tr{
+  background-color: rgba(153,153,153,.1);
+}
+
+/*This creates the alternating background effect*/
+#timetable tr:nth-child(odd) {background-color: white;}
+#timetable th{
+text-align: left;
+padding: 10px 100px 10px 10px;
+}
+
+/*This formats the spacing in between table displays*/
+#timetable td{
+text-align: left;
+
+padding: 10px 100px 10px 10px;
+
+}
+
+/*This formats the delete button on the table of logged times*/
+#timetable input{
+  background: linear-gradient(to bottom ,rgba(0,0,187,.1), rgba(0,0,187,.2));
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/*This positions the logout button*/
+#logout{
+  position:absolute;
+  top: 60px;
+  right: 30px;
+  
+}
+
+/*This formats the logout button*/
+#logout input{
+  background: linear-gradient(to bottom ,rgba(0,0,187,.1), rgba(0,0,187,.2));
+  padding: 5px 10px;
+  border-radius: 5px;
+  
+}
+
+/*This formats the button on the add time form*/
+#add-button input{
+  color: #555;  
+  background: linear-gradient(to bottom ,rgba(0,0,187,.1), rgba(0,0,187,.2));
+  padding: 5px 10px 5px 10px;  
+  border-radius: 5px; 
+}
+
+/* This formats the header of the delete account form*/
+#delete-acct h3{
+  color: black;
+  font-size: 20px;
+}
+
+/* This formats the delete account background around the delete account form*/
+#delete-acct{
+    font-size: 12px;
+    color: #999;
+    width:300px;
+    margin: 10px;
+    padding: 10px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,187,.1);  
+    border-radius: 2px;
+    background-color: rgba(0,0,187,.1);
+}
+#delete-acct input{
+    border-color: #bbb;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px 50px 5px 5px;
+    margin: 5px;
+
+}
+/*This formats the style of the header for the Add Time Form*/
+#create-time h3{
+  color: black;
+  font-size: 20px;
+}
+
+/*This formats the input boxes on the Add Time form*/
+#create-time input{
+    border-color: #bbb;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px 50px 5px 5px;
+    margin: 5px;
+
+}
+
+/*This is the background around the Add Time form*/
+#create-time{
+    font-size: 12px;
+    color: #999;
+    width:300px;
+    margin: 10px;
+    padding: 10px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,187,.1);
+    
+    border-radius: 2px;
+    background-color: rgba(0,0,187,.1);
+}
+
+/*This is the background behind the start and stop buttons
+it should be rendered the same for both as when one button dissappears the
+other appears*/
+#start-stop{
+    width:300px;
+    margin: 10px;
+    padding: 10px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,187,.1);
+    
+    border-radius: 2px;
+    background-color: rgba(0,0,187,.1);
+}
+/*This formats the sign in and register buttons on the front pages*/
 #formbutton input{
     color: white;
-    background-color: gray;
+    background: linear-gradient( to bottom,rgb(187,187,187),gray);
     border-color: white;
     border-radius: 10px;
     padding: 10px 20px;
 }
 
+/*This is the heading that goes across the top of the page*/
 .heading{color: #bbb;
         position: absolute;
-        font-weight: bold;
+        font-weight: 3;
         top: 0;
         left: 0;
         width: 100%;
@@ -56,17 +237,43 @@
         margin: 0px;
         padding: 15px;}
 
+/*This is the style for error messages*/
 .error{color: #b00;
-
-border-color: rgba(187,0,0,.5);
+border: solid;
+border-width: 1px;
+border-color: rgba(187,0,0,.1);
 font-size: 14px;
-margin: 0px 0px 0px 200px;
+margin: 0px 0px 0px 400px;
 padding: 10px;
 border-radius: 5px;
 background-color: rgba(187,0,0,.1);
-
+width: 600px;
 }
-
+.warning{
+color: rgb(212,212,0);
+border: solid;
+border-width: 1px;
+border-color: rgba(212,212,0,.1);
+font-size: 14px;
+margin: 0px 0px 0px 400px;
+padding: 10px;
+border-radius: 5px;
+background-color: rgba(212,212,0,.1);
+width: 600px;
+}
+.success{
+color: #0b0;
+border: solid;
+border-width: 1px;
+border-color: rgba(0,187,0,.1);
+font-size: 14px;
+margin: 0px 0px 0px 400px;
+padding: 10px;
+border-radius: 5px;
+background-color: rgba(0,187,0,.1);
+width: 600px;
+}
+/*This offsets the content so it doesn't get rendered under the top*/
 #body{
     margin:75px 0;
   

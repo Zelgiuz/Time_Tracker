@@ -1,7 +1,7 @@
 <?php
 
 //load config
-if(include('config.php'))
+if(file_exists('config.php'))
 require('config.php');
 else echo("RENAME CONFIG.SAMPLE.PHP to CONFIG.PHP AFTER MAKING THE APPROPRIATE CHANGES");
 
