@@ -2,7 +2,7 @@
 if ($logged!=2)
 echo('<h2 class="heading">TIMETRACKER</h2>');
 else
-echo('<h2 class="heading">TIMETRACKER                                   Logged in as:</h2>');
+echo('<h2 class="heading">TIMETRACKER Logged in as:</h2>');
 echo('<div id="body">');
 
 if ($_POST["exe"]=="login"){
@@ -45,6 +45,23 @@ elseif($_POST["exe"]=="delete_user"){
  $logged=delete_user($db);  
 }
 else{}
+echo('</div>');
+if ($logged!=1)
+echo('<h2 class="heading">TIMETRACKER</h2>');
+
+else{
+  $user=decrypt($db);
+  $sql="SELECT * FROM `Accounts` WHERE `Account_ID`='$user'";
+  $stmt=$db->query($sql);
+  $row=$stmt->fetch();
+  
+  echo('<h2 class="heading">TIMETRACKER<span style="color:black">-------------------------------------------------------------------------------------</span> Logged in as: '.$row[1].'</h2>');
+
+}
+echo('<div id="body">');
+
+
+
 
 //Print these forms if the user is not logged in and hasn't failed an attempt
 if ($logged==0){
