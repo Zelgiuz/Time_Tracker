@@ -43,7 +43,7 @@ function create_form_login(){
 
 function create_form_logout(){
   echo('<div id="logout">
-    <form method="post" "action=index.php">
+    <form method="post" action"=index.php">
       <input type="submit" value="Logout"><br>
       <input type="hidden" name="exe" value="logout">
     </form>
@@ -59,7 +59,7 @@ echo('
      <h3>Add Custom Time</h3>
      <h5>All times are in 24 hours format</h5>
      <h5>Date is assumed to be today</h5>
-  <form method="post" "action=index.php">
+  <form method="post" action"=index.php">
     Start:<input type="text" name="start_hours" placeholder="HH:MM"><br>    
     Stop: <input type="text" name="stop_hours" placeholder="HH:MM"><br>
     <div id="add-button"><input type="submit" value="Add"></div><br>
@@ -74,7 +74,7 @@ function create_form_start(){
 echo('
    <div id="start-stop">
 	 <!-- start button -->
-    <form method="post" "action=index.php">
+    <form method="post" action="index.php">
       <div id="startbutton"><input type="submit" value="Start Timer"></div><br>
       <input type="hidden" name="exe" value="start">
     </form>
@@ -86,7 +86,7 @@ function create_form_stop(){
 	echo('
     <div id="start-stop">
     <!-- stop button -->
-    <form method="post" "action=index.php">
+    <form method="post" action"=index.php">
     <div id="stopbutton">  <input type="submit" value="Stop Timer"></div><br>
       <input type="hidden" name="exe" value="stop">
     </form>
@@ -98,7 +98,7 @@ function create_form_delete_user(){
   echo('<!-- form to delete a user-->
      
     <div id="delete-acct">
-    <form method="post" "action=index.php">
+    <form method="post" action"=index.php">
     <h3>Delete Account</h3>
       If you check confirm and click delete all of your data will be destroyed.
       Press only with this knowledge.<br>
