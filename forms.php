@@ -61,7 +61,7 @@ echo('
      <h5>All times are in 24 hours format</h5>
   <form method="post" "action=index.php">
     Start:<input type="text" name="start_hours" placeholder="HH:MM"><br>    
-    Stop:   <input type="text" name="stop_hours" placeholder="HH:MM"><br>
+    Stop: <input type="text" name="stop_hours" placeholder="HH:MM"><br>
     <div id="add-button"><input type="submit" value="Add"></div><br>
 	<input type="hidden" name="exe" value="create_time">
   </form>    
