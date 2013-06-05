@@ -7,17 +7,19 @@ function delete_user($db){
 	//for creating a user
   $pass=sha1($pw.SYS_SALT);
 
-  $sql= "SELECT * FROM `Accounts` WHERE `Username`='$sn' AND `Password`='$pass'";
+  $sql=$db->prepare("SELECT * FROM `Accounts` WHERE `Username`= :Username AND `Password`= :Password");
+  
   //query 
   if(isset($_POST['checked']) && 
    $_POST['checked'] == 'confirm'){
-    $stmt=$db->query($sql);
-  
-    if($stmt){
-      $row=$stmt->fetch();
+    $sql->execute(array(':Username'=> $sn,':Password'=> $pass));
+    
+    
+    if($sql){
+      $row=$sql->fetch();
         if ($row==null){
           echo('<h3 class="error">This user does not exist</h3>');
-          
+          return 1;
             }		
         elseif($_COOKIE['user']!=sha1($row[0].SYS_SALT)){
           echo('<h3 class="warning">You may not delete any account other than this one</h3>');

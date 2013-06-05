@@ -7,14 +7,13 @@ function login($db) {
 	//for creating a user
     $pass=sha1($pw.SYS_SALT);
 
-    $sql= "SELECT * FROM `Accounts` WHERE `Username`='$sn' AND `Password`='$pass'";
-    //query 
-    $stmt=$db->query($sql);
+    $sql=$db->prepare("SELECT * FROM `Accounts` WHERE `Username`= :Username AND `Password`= :Password");
+    $sql->execute(array(':Username'=> $sn,':Password'=> $pass));
     
 
    //Check to see if the user is a valid user else output Error 
-    if($stmt){
-      $row=$stmt->fetch();
+    if($sql){
+      $row=$sql->fetch();
         if ($row==null){
               //if no rows exist query failed set cookie as such
           return 2;

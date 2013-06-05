@@ -5,15 +5,16 @@ function start($db){
     $start=time();    
     $user=decrypt($db);
     $number=0;
-    $sql= "UPDATE `Time` SET `Stop`='$start' WHERE `Account_ID`='$user' AND `Stop`='$number'";
-    $db->query($sql);
+    $sql= $db->prepare("UPDATE `Time` SET `Stop`='$start' WHERE `Account_ID`= :user AND `Stop`='$number'");
+    $sql->execute(array(':user'=>$user));
+    
 
     //insert into the database their start time and their stop time
-    $sql1= "INSERT INTO `Time`(`Start`,`Stop`, `Account_ID`) VALUES ('$start','$number','$user')";
-	  $db->query($sql1);
+    $sql1= $db->prepare("INSERT INTO `Time`(`Start`,`Stop`, `Account_ID`) VALUES ('$start','$number', :user)");
+	  $sql1->execute(array(':user'=>$user));
     return 1;
     }
   else{
-    echo("Can't log start a new log before you stop the current one, SRSLY!");
+    echo('<h3 class="warning">Cant start a new log before you stop the current one, SRSLY!</h3>');
   }
 }

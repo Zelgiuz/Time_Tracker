@@ -1,7 +1,7 @@
 <?php
 function delete($db){
   $id=$_POST['ID'];
-  $sql= "DELETE FROM `Time` WHERE `ID`='$id'";
-  $db->query($sql);
+  $sql= $db->prepare("DELETE FROM `Time` WHERE `ID`= :id");
+  $sql->execute(array(':id'=>$id));
 
 }

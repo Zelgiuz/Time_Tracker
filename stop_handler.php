@@ -10,8 +10,8 @@ function stop($db){
   $number=0;
  	
 	//Allows the user to create timestamps.
-	$sql= "UPDATE `Time` SET `Stop`='$stop' WHERE `Stop`='$number' AND `Account_ID`='$user'"; 
-	$db->query($sql);
+	$sql= $db->prepare("UPDATE `Time` SET `Stop`='$stop' WHERE `Stop`='$number' AND `Account_ID`= :user"); 
+	$sql->execute(array(':user'=>$user));
   return 0;
     }
   else{
