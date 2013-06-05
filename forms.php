@@ -52,13 +52,13 @@ function create_form_logout(){
 }
 
 
-//This is the display of the timer
-//Disabled for the MVP
+//The form that adds time manually based on today
 function create_form_time_create(){
 echo('
     <div id="create-time">
      <h3>Add Custom Time</h3>
      <h5>All times are in 24 hours format</h5>
+     <h5>Date is assumed to be today</h5>
   <form method="post" "action=index.php">
     Start:<input type="text" name="start_hours" placeholder="HH:MM"><br>    
     Stop: <input type="text" name="stop_hours" placeholder="HH:MM"><br>
@@ -69,7 +69,7 @@ echo('
 ');
 }
 
-//the start and stop buttons
+//the start button form.
 function create_form_start(){
 echo('
    <div id="start-stop">
@@ -81,6 +81,7 @@ echo('
     </div>
 	');
 }
+//THE STOP BUTTON FORM!
 function create_form_stop(){
 	echo('
     <div id="start-stop">
@@ -92,6 +93,7 @@ function create_form_stop(){
     </div>
     ');
 }
+//THE START DELET USER FORM!
 function create_form_delete_user(){
   echo('<!-- form to delete a user-->
      

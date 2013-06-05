@@ -84,12 +84,12 @@ background-color: rgba(0,187,0,.1);
 /* this positions and sets the fonts for the timetable*/
 
 #timetable{
-position: relative;
-top: -645px;
-left: 450px;
-font-size: 12px;
-color: #999;
-margin:10px;
+  position: relative;
+  top: -685px;
+  left: 364px;
+  font-size: 12px;
+  color: #999;
+  margin:10px;
 }
 
 /*This is the base of the alternating background effect*/
@@ -117,6 +117,7 @@ padding: 10px 100px 10px 10px;
   background: linear-gradient(to bottom ,rgba(0,0,187,.1), rgba(0,0,187,.2));
   padding: 5px 10px;
   border-radius: 5px;
+  color: black;
 }
 
 /*This positions the logout button*/
@@ -127,12 +128,8 @@ padding: 10px 100px 10px 10px;
 
 /*This formats the logout button*/
 #logout input{
-  position: absolute;
-  top: 91px;
-  right: 30px;
-  background: linear-gradient(to bottom ,rgba(0,0,187,.1), rgba(0,0,187,.2));
-  padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 5px;  
+  margin-left: 16px;
   
 }
 
@@ -172,13 +169,13 @@ padding: 10px 100px 10px 10px;
 
 }
 /*This formats the style of the header for the Add Time Form*/
-#create-time h3{
+#create-time h3 {
   color: black;
   font-size: 20px;
 }
 
 /*This formats the input boxes on the Add Time form*/
-#create-time input{
+#create-time input {
     border-color: #bbb;
     border-width: 1px;
     border-radius: 5px;
@@ -188,7 +185,7 @@ padding: 10px 100px 10px 10px;
 }
 
 /*This is the background around the Add Time form*/
-#create-time{
+#create-time {
     font-size: 12px;
     color: #999;
     width:300px;
@@ -205,7 +202,7 @@ padding: 10px 100px 10px 10px;
 /*This is the background behind the start and stop buttons
 it should be rendered the same for both as when one button dissappears the
 other appears*/
-#start-stop{
+#start-stop {
     width:300px;
     margin: 10px;
     padding: 10px;
@@ -217,7 +214,7 @@ other appears*/
     background-color: rgba(0,0,187,.1);
 }
 /*This formats the sign in and register buttons on the front pages*/
-#formbutton input{
+#formbutton input {
     color: white;
     background: linear-gradient( to bottom,rgb(187,187,187),gray);
     border-color: white;
@@ -226,7 +223,7 @@ other appears*/
 }
 
 /*This is the heading that goes across the top of the page*/
-.heading{
+.heading {
   color: #bbb;
   position: absolute;
   font-weight: 3;
@@ -236,8 +233,55 @@ other appears*/
   border: 0px;
   background-color:black;
   margin: 0px;
-  padding: 2%;
+  padding: 16px 2%;
+}
+.heading #logout, .heading h2, .heading form, .heading input {
+  display: inline;
+}
+ 
+.heading .left, .heading .right {
+  display: inline;
+  width: 25%;
+}
+.heading .left {
+  float: left;
+  text-align: left;
+}
+.heading .right {
+  float: right;
+  text-align: right;
+}
+
+.heading form {
+  margin: 0px;
+  padding: 0px;
+}
+  /* THis is the left part of the heading that goes across the top when a user is logged in*/
+.headingleft{
+  color: #bbb;
+  position: relative;
+  font-weight: 3;
+  top: 0;
+  left: 0;
+  width: 48%;
+  border: 0px;
+  background-color:black;
+  margin: 0px;
+  padding: 1%;
   }
+  /*this is the right part of the heading the goes across the top when a user is logged in*/
+.headingright{
+  color: #bbb;
+  position: relative;
+  font-weight: 3;
+  top: 0;
+  right: 0;
+  width: 48%;
+  border: 0px;
+  background-color:black;
+  margin: 0px;
+  padding: 1%;
+}
 
 
   

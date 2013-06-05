@@ -44,17 +44,31 @@ if(isset($_POST["exe"])){
   else{}
 }
 echo('</div>');
-if ($logged!=1)
-echo('<h2 class="heading">TIMETRACKER</h2>');
-
-else{
-  $user=decrypt($db);
-  $sql="SELECT * FROM `Accounts` WHERE `Account_ID`='$user'";
-  $stmt=$db->query($sql);
-  $row=$stmt->fetch();
-  
-  echo('<h2 class="heading">TIMETRACKER<span style="color:black">-------------------------------------------------------------------------------------</span> Logged in as: '.$row[1].'</h2>');
-
+if ($logged!=1) {
+?>
+  <div class="heading">
+    <div class="left">
+      <h2>TIMETRACKER</h2>
+    </div>
+  </div>
+<?php
+} else {
+   $user=decrypt($db);
+   $sql="SELECT * FROM `Accounts` WHERE `Account_ID`='$user'";
+   $stmt=$db->query($sql);
+   $row=$stmt->fetch();
+     
+?>
+  <div class="heading">
+    <div class="left">
+      <h2>TIMETRACKER</h2>
+    </div>
+    <div class="right">
+      <h2>Logged in as: <?php echo $row[1]; ?></h2>
+      <?php echo(create_form_logout()); ?>
+    </div>
+  </div>
+<?php
 }
 echo('<div id="body">');
 
@@ -89,7 +103,7 @@ else{  //creates the form that allows the user to start and stop the clock
   
 	   
 	   //creates the button that allows a user to logout
-	create_form_logout();
+
   create_form_time_create();
   create_form_delete_user();
 	display_time($db);
@@ -99,6 +113,3 @@ else{  //creates the form that allows the user to start and stop the clock
 
 
   echo('</div>');
-
-
-
