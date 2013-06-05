@@ -14,7 +14,7 @@ function start($db){
 	  $sql1->execute(array(':user'=>$user));
     return 1;
     }
-  else{
-    echo('<h3 class="warning">Cant start a new log before you stop the current one, SRSLY!</h3>');
+  else{   
+    return 1;
   }
 }

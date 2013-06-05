@@ -12,7 +12,7 @@ include('db.php');
 if(isset($_COOKIE['logged'])) $logged=$_COOKIE['logged'];
 else $logged=0;
 
-if(isset($_COOKIE['start']))$start=$_COOKIE['start'];
+if(isset($_COOKIE['start']))$start=1;
 else $start=0;
 
 if(isset($_COOKIE['user']))$encrypt=$_COOKIE['user'];
