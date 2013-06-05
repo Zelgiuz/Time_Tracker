@@ -7,9 +7,9 @@ echo('
     <form method="post" action="index.php">
     <h2>Register</h2>  
      
-        <input type="text" name="username"><br>
-        <input type="password" name="password"><br>
-        <input type="password" default="Repeat Password" name="retyped"><br>
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="password" default="Repeat Password" name="retyped" placeholder="Retype Password"><br>
         <div id="formbutton"><input type="submit" value="Register"></div><br>
         <input type="hidden" name="exe" value="create">
         
@@ -27,8 +27,8 @@ function create_form_login(){
     
     <form method="post" action="index.php">
     <h2>Sign In</h2>
-      <input type="text" default="username" name="username"><br>
-      <input type="password" default="password" name="password"><br>
+      <input type="text" default="username" name="username" placeholder="Username"><br>
+      <input type="password" default="password" name="password" placeholder="Password"><br>
       <div id="formbutton"><input type="submit" value="Sign in"></div><br>
       <input type="hidden" name="exe" value="login">
     </form>
@@ -60,8 +60,8 @@ echo('
      <h3>Add Custom Time</h3>
      <h5>All times are in 24 hours format</h5>
   <form method="post" "action=index.php">
-    Start:<input type="text" name="start_hours"><br>    
-    Stop:   <input type="text" name="stop_hours"><br>
+    Start:<input type="text" name="start_hours" placeholder="HH:MM"><br>    
+    Stop:   <input type="text" name="stop_hours" placeholder="HH:MM"><br>
     <div id="add-button"><input type="submit" value="Add"></div><br>
 	<input type="hidden" name="exe" value="create_time">
   </form>    
@@ -100,8 +100,8 @@ function create_form_delete_user(){
     <h3>Delete Account</h3>
       If you check confirm and click delete all of your data will be destroyed.
       Press only with this knowledge.<br>
-      <input type="text" default="Username" name="username"><br>
-      <input type="password" default="Password" name="password"><br>
+      <input type="text" default="Username" name="username" placeholder="Username"><br>
+      <input type="password" default="Password" name="password" placeholder="Password"><br>
       <input type="checkbox" value="confirm" name="checked">Confirm<br>
       <div id="deletebutton"><input type="submit" value= "Delete Account"></div><br>
       

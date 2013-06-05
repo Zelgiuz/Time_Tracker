@@ -1,9 +1,9 @@
 <?php
 function display_time($db){
   $user=decrypt($db);
-    $sql="SELECT * FROM `Time` WHERE `Account_ID`='$user' ORDER BY `Start` DESC";
-    $stmt=$db->query($sql);
-	if ($stmt){
+    $sql=$db->prepare("SELECT * FROM `Time` WHERE `Account_ID`= :user ORDER BY `Start` DESC");
+    $sql->execute(array(':user'=>$user));
+	if ($sql){
 		echo('<div id="timetable">
       <table border="0" style"border-collapse:collapse;" cellspacing="0">
 		  <tr>
@@ -13,7 +13,7 @@ function display_time($db){
       
 		  </tr>
 		  ');
-	    while ($row=$stmt->fetch()){
+	    while ($row=$sql->fetch()){
         if ($row[1]==0){
           echo('<tr id="in-progress">
             <td id="in-progress">'.date('D, M jS Y h:i:s a',$row[0]).'</td>	

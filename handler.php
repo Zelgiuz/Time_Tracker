@@ -1,8 +1,5 @@
 <?php
-if ($logged!=2)
-echo('<h2 class="heading">TIMETRACKER</h2>');
-else
-echo('<h2 class="heading">TIMETRACKER Logged in as:</h2>');
+
 echo('<div id="body">');
 if(isset($_POST["exe"])){
   if ($_POST["exe"]=="login"){
