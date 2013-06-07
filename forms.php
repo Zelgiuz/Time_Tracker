@@ -50,7 +50,16 @@ function create_form_logout(){
     </div>
   ');//end form
 }
-
+//The Form to reset ones password
+function create_form_reset(){
+  echo('<div id="logout">
+    <form method="post" action="index.php">
+      <input type="submit" value="Reset Password"><br>
+      <input type="hidden" name="exe" value="reset">
+    </form>
+    </div>
+  ');//end form
+}
 
 //The form that adds time manually based on today
 function create_form_time_create(){
@@ -111,4 +120,25 @@ function create_form_delete_user(){
       </form>
     </div>
   ');
+}
+
+
+function create_form_reset_password(){
+
+  echo('<div id="signin">
+    
+    <form method="post" action="index.php">
+    <h2>Reset Password</h2>
+      <input type="text" name="username" placeholder=" Username"><br>
+      <input type="password" name="old-password" placeholder="Old Password"<br>
+      <input type="password" name="password" placeholder="New Password"><br>
+      <input type="password" name="retype-password" placeholder="Re-Type New Password"><br>
+      <div id="formbutton"><input type="submit" value="Reset-Password"></div><br>
+      <input type="hidden" name="exe" value="reset_password">
+    </form>
+    </div>'
+    
+    
+    );
+
 }

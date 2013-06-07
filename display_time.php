@@ -1,9 +1,13 @@
 <?php
 function display_time($db){
+  //figure out the current user from cookie information
   $user=decrypt($db);
     $sql=$db->prepare("SELECT * FROM `Time` WHERE `Account_ID`= :user ORDER BY `Start` DESC");
     $sql->execute(array(':user'=>$user));
-	if ($sql){
+	
+  
+  //The table header
+  if ($sql){
 		echo('<div id="timetable">
       <table border="0" style"border-collapse:collapse;" cellspacing="0">
 		  <tr>
@@ -13,6 +17,8 @@ function display_time($db){
       
 		  </tr>
 		  ');
+      
+      //If the table contains a row that is currently active (the start time hasn't been logged) highlight it green
 	    while ($row=$sql->fetch()){
         if ($row[1]==0){
           echo('<tr id="in-progress">
@@ -21,6 +27,8 @@ function display_time($db){
             <td id="in-progress">'.gmdate("H:i:s",(time()-$row[0])).'</td>
 		        </tr>');
         }
+        
+      //Else output the table rows alternating between white and very light blue backgrounds
         else{
 		 
           echo('<tr>

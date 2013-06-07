@@ -17,7 +17,7 @@ else $start=0;
 
 if(isset($_COOKIE['user']))$encrypt=$_COOKIE['user'];
 else $encrypt="";
-
+require('reset_password_handler.php');
 require('login_user_handler.php');
 require('forms.php');
 require('display_time.php');

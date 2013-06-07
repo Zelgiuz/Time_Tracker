@@ -1,6 +1,7 @@
 <?php
 
 echo('<div id="body">');
+//Decision switch based on the value of EXE
 if(isset($_POST["exe"])){
   if ($_POST["exe"]=="login"){
     $logged=login($db);
@@ -41,8 +42,18 @@ if(isset($_POST["exe"])){
   elseif($_POST["exe"]=="delete_user"){
     $logged=delete_user($db);  
   }
+  elseif($_POST["exe"]=="reset"){
+      create_form_reset_password();
+    
+  }
+  elseif($_POST["exe"]=="reset_password"){
+      reset_password($db);
+  }
   else{}
 }
+//end the decision switch
+
+//stylize the header so it has proper positioning
 echo('</div>');
 if ($logged!=1) {
 ?>
@@ -65,11 +76,16 @@ if ($logged!=1) {
     </div>
     <div class="right">
       <h2>Logged in as: <?php echo $row[1]; ?></h2>
-      <?php echo(create_form_logout()); ?>
+      <?php 
+        echo(create_form_logout());
+        echo(create_form_reset());
+      ?>
     </div>
   </div>
 <?php
 }
+//end stylization of the header
+
 echo('<div id="body">');
 
 

@@ -5,10 +5,13 @@ function create_user($db){//Grab the arguments for the function from the post
   $sn=$_POST["username"];
   $pw=$_POST["password"];
   $retype=$_POST["retyped"];
-  //if the password 2 password fields are equal
+  //Only allow users and passwords to be more than 4 characters
+  if (strlen($sn)<5){echo('<h3 class="warning"> Username isnt long enough</h3>');return;}
+  if (strlen($pw)<5){echo('<h3 class="warning"> Password isnt long enough</h3>');return;}
+  //if the password 2 password fields aren't equal end
   if(!($pw==$retype)){ echo('<h3 class="warning"> PassWords do not match</h3>');return;}
 
-  //else end; 
+  //else continue; 
   else{
     
 

@@ -15,6 +15,6 @@ function stop($db){
   return 0;
     }
   else{
-    echo("Can't log a time when you haven't hit my start button, sheez");
+    return 0;
   }
   }
